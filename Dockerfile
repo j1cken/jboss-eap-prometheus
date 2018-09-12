@@ -1,7 +1,8 @@
 FROM registry.access.redhat.com/jboss-eap-7/eap71-openshift:latest
 
+ENV version 0.9
 RUN mkdir -p ${JBOSS_HOME}/prometheus \
-    && curl https://repo1.maven.org/maven2/io/prometheus/jmx/jmx_prometheus_javaagent/0.3.0/jmx_prometheus_javaagent-0.3.0.jar \
+    && curl https://repo1.maven.org/maven2/io/prometheus/jmx/jmx_prometheus_javaagent/${version}/jmx_prometheus_javaagent-${version}.jar \
     -o ${JBOSS_HOME}/prometheus/jmx-prometheus.jar
 
 ADD config.yaml ${JBOSS_HOME}/prometheus/config.yaml
