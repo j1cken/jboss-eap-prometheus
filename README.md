@@ -16,7 +16,16 @@ $ oc new-build https://github.com/j1cken/jboss-eap-prometheus\#7.1 --name eap71-
 
 ## Enable OpenShift Discovery
 
-Make sure to add your namespace patterns (or a unique one like **eap-ftw** below) to the regex of the kubernetes-service-endpoints job config otherwise your service will not be discovered if it doesn't match the given pattern. Prometheus 
+Make sure to add your namespace patterns (or a unique one like **eap-ftw** below) to the regex of the kubernetes-service-endpoints job config otherwise your service will not be discovered if it doesn't match the given pattern. Prometheus config is provided by a config map called *prometheus*:
+
+```
+$ oc get cm -n openshift-metrics           
+NAME           DATA      AGE
+alertmanager   1         3h
+prometheus     2         3h
+```
+
+Look for *kubernetes-service-endpoints*:
 
 ```
 - job_name: 'kubernetes-service-endpoints'
