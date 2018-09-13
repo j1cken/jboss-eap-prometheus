@@ -1,0 +1,3 @@
+embed-server --server-config standalone-openshift.xml
+/subsystem=undertow :write-attribute(name=statistics-enabled,value=true)
+stop-embedded-server
