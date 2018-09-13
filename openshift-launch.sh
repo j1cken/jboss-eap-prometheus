@@ -60,12 +60,12 @@ else
     log_info "Using CLI Graceful Shutdown instead of TERM signal"
   fi
 
-  if [ -e jboss-config.cli ]; then
+  if [ -e ${JBOSS_HOME}/bin/jboss-config.cli ]; then
     cat >${JBOSS_HOME}/bin/my-config.cli <<EOF
 embed-server --std-out=echo --server-config=standalone-openshift.xml
 run-batch
 EOF
-    cat jboss-config.cli >>${JBOSS_HOME}/bin/my-config.cli
+    cat ${JBOSS_HOME}/bin/jboss-config.cli >>${JBOSS_HOME}/bin/my-config.cli
     cat >>${JBOSS_HOME}/bin/my-config.cli <<EOF
 stop-embedded-server
 EOF
