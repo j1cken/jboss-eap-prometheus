@@ -1,7 +1,7 @@
 FROM registry.access.redhat.com/jboss-eap-7/eap71-openshift:latest
 
 ENV version 0.3.1
-ENV config.cli ${JBOSS_HOME/prometheus/jboss-config.cli
+ENV config.cli ${JBOSS_HOME}/prometheus/jboss-config.cli
 
 RUN mkdir -p ${JBOSS_HOME}/prometheus
 ADD config.yaml ${JBOSS_HOME}/prometheus/config.yaml
