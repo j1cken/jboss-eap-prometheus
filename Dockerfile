@@ -8,7 +8,7 @@ ADD jboss-config.cli ${cli}
 
 RUN mkdir -p ${JBOSS_HOME}/prometheus \
     && curl https://repo1.maven.org/maven2/io/prometheus/jmx/jmx_prometheus_javaagent/${version}/jmx_prometheus_javaagent-${version}.jar \
-    -o ${JBOSS_HOME}/prometheus/jmx-prometheus.jar \
+    -o ${JBOSS_HOME}/prometheus/jmx-prometheus.jar
 ADD config.yaml ${JBOSS_HOME}/prometheus/config.yaml
 
 EXPOSE 9404
