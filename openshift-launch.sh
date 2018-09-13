@@ -70,7 +70,7 @@ EOF
 stop-embedded-server
 EOF    
     ${JBOSS_HOME}/bin/jboss-cli.sh --file=${JBOSS_HOME}/bin/my-config.cli --error-on-interact --echo-command
-  }
+  fi
 
   $JBOSS_HOME/bin/standalone.sh -c standalone-openshift.xml -bmanagement 127.0.0.1 ${JAVA_PROXY_OPTIONS} ${JBOSS_HA_ARGS} ${JBOSS_MESSAGING_ARGS} &
 
