@@ -68,7 +68,7 @@ EOF
     cat jboss-config.cli >>${JBOSS_HOME}/bin/my-config.cli
     cat >>${JBOSS_HOME}/bin/my-config.cli <<EOF
 stop-embedded-server
-EOF    
+EOF
     ${JBOSS_HOME}/bin/jboss-cli.sh --file=${JBOSS_HOME}/bin/my-config.cli --error-on-interact --echo-command
   fi
 
