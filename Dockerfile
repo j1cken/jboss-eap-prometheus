@@ -9,7 +9,7 @@ ADD jboss-config.cli ${cli}
 
 RUN curl https://repo1.maven.org/maven2/io/prometheus/jmx/jmx_prometheus_javaagent/${version}/jmx_prometheus_javaagent-${version}.jar \
     -o ${JBOSS_HOME}/prometheus/jmx-prometheus.jar \
-    && ${JBOSS_HOME}/bin/jboss-cli.sh -f ${cli} \
+    && ${JBOSS_HOME}/bin/jboss-cli.sh --file=${cli} \
     && rm ${cli}
 
 EXPOSE 9404
