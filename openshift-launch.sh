@@ -63,10 +63,11 @@ else
   if [ -e ${JBOSS_HOME}/bin/jboss-config.cli ]; then
     cat >${JBOSS_HOME}/bin/my-config.cli <<EOF
 embed-server --std-out=echo --server-config=standalone-openshift.xml
-run-batch
+batch
 EOF
     cat ${JBOSS_HOME}/bin/jboss-config.cli >>${JBOSS_HOME}/bin/my-config.cli
     cat >>${JBOSS_HOME}/bin/my-config.cli <<EOF
+run-batch
 stop-embedded-server
 EOF
     ${JBOSS_HOME}/bin/jboss-cli.sh --file=${JBOSS_HOME}/bin/my-config.cli --error-on-interact --echo-command
