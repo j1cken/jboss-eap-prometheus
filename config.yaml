@@ -2,6 +2,7 @@
 startDelaySeconds: 10
 lowercaseOutputName: true
 lowercaseOutputLabelNames: true
+whitelistObjectNames: ["jboss.as:subsystem=undertow,*"]
 rules:
   # CONFIG
 
